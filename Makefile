@@ -1,7 +1,7 @@
 CC = gcc
 CXX = g++
 
-FLAGS = -g -D_GNU_SOURCE
+FLAGS = -g -W -Wall -D_GNU_SOURCE -lrt -pthread -fPIE -fstack-protector-all -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
 CFLAGS += $(FLAGS)
 CXXFLAGS += $(FLAGS)
 
