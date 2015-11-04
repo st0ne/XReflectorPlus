@@ -1,4 +1,21 @@
 
+<<<<<<< HEAD
+=======
+REF000	ir3uic.dstargateway.org
+REF001	ref001.dstargateway.org
+REF003	ref003.dstargateway.org
+REF027	ref027.dstargatewy.org
+REF055	95.110.229.195
+REF068	ref068.dstargateway.org
+XRF003	xrf003.iw0red.it
+XRF024	xrf024.dstar.at
+XRF030	xrf030.oe3xht.at
+XRF077	xrf077.duckdns.org
+XRF232	xrf232.tms-it.net
+XRF262	xrf262.reflector.up4dar.de
+XRF433	217.160.22.17
+XRF727	w4icy.inerrantenergy.com
+>>>>>>> 2b17dd1588f728730ad02205dae6cd35d1844c7e
 
 
 
