@@ -1,0 +1,76 @@
+#!/bin/sh
+#
+# /etc/init.d/dxrfd
+#
+# Starts the dstar reflector as a Linux service
+#
+# chkconfig: 35 20 80
+# description: dstar reflector
+# processname: dxrfd
+
+
+### BEGIN INIT INFO
+# Provides: xreflector
+# Required-Start: $remote_fs $syslog
+# Required-Stop: $remote_fs $syslog
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: Start XReflector at boot time
+# Description: Enable service provided by XReflector
+### END INIT INFO
+
+
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+
+./lib/lsb/init-functions
+
+NAME="XReflector"
+DAEMON="/root/dxrfd/dxrfd"
+ARGUMENTS="/root/dxrfd/dxrfd.cfg"
+PIDFILE="/var/log/dxrfd.pid"
+USER=root
+GROUP=root
+
+[ -f $DAEMON ] || exit 0
+
+start () {
+	# force log rotation
+	# logrotate -f /etc/logrotate.d/xreflector
+        rm -f $LOGFILE
+	# start daemon
+	echo -n "Starting $NAME: "
+	start-stop-daemon --start --exec $DAEMON --chuid $USER:$GROUP --background --pidfile $PIDFILE --make-pidfile -- $ARGUMENTS
+	RETVAL=$?
+	echo
+	return $RETVAL
+}
+
+stop () {
+	echo -n "Stopping $NAME: "
+	start-stop-daemon --stop --pidfile $PIDFILE
+	RETVAL=$?
+	echo
+}
+
+case "$1" in
+	start)
+		start
+	;;
+	stop)
+		stop
+	;;
+	restart)
+		stop
+		start
+	;;
+	status)
+		status_of_proc $DAEMON $NAME
+	;;
+	*)
+		echo "Usage: $0 {start|stop|restart|status}"
+		exit 1
+esac
+
+exit 0
+
