@@ -32,7 +32,7 @@ using namespace std;
 
 #include <pthread.h>
 
-#define VERSION "3.16"
+#define VERSION "3.17"
 #define OWNER_SIZE 8
 #define IP_SIZE 15
 #define MAXHOSTNAMELEN 64
@@ -2521,6 +2521,12 @@ static void runit()
          {
             found = false;
 
+	  // LX3JL patch begin
+                refbuf[8] = 0x00;
+                refbuf[9] = 0x00;
+          // LX3JL patch ends
+
+
             sprintf(search_value, "%s-%s", an_ip, a_port);
             inbound_pos = inbound_list.find(search_value);
             if (inbound_pos != inbound_list.end())
@@ -3601,6 +3607,12 @@ static void runit()
              (recvlen == 27))
          {
             found = false;
+
+	  // LX3JL patch begin
+                refbuf[8] = 0x00;
+                refbuf[9] = 0x00;
+          // LX3JL patch ends
+
 
             user_pos = a_user_list.find(an_ip);
             if (user_pos != a_user_list.end())
