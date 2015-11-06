@@ -1,0 +1,182 @@
+/* elenco identificatori presenti
+
+#container
+div contenitore dell'intero body
+
+tag header
+intestazione del nome del reflector e versione dashboard e software
+
+#imfo
+div contenente le informazioni di stato
+
+#contacts
+marcatore per la gestione delle informazioni sui contatti, etc.
+
+#num1
+div contenitore della tabella dextra
+
+gateways
+classe per la gestione della tabella relativa
+
+#tabletitle
+intestazione delle tabelle, comune a tutte
+
+#refl
+marcatore per la visualizzazione della connessione di reflector nella tabella con url dashboard
+
+#refl2
+marcatore per la visualizzazione della connessione di reflector nella tabella senza url dashboard
+#num2
+div contenitore della tabella dplus
+
+clients
+classe per la gestione della tabella relativa
+
+#num3
+div contenitore della tabella nominativi ascoltati
+
+calls
+classe per la gestione della tabella relativa
+
+media
+classe per la gestione dell'immagine nella dashboard dei reflector
+
+media2
+classe per la gestione dell'immagine nella colonna di provenienza ultimi nominativi ascoltati e dplus
+
+#cnxmod
+marcatore per la visualizzazione della lettera del modulo di trasmissione
+
+#rownum
+marcatore per gestione numero di riga
+
+nb: il footer e' stato rimosso, gli altri tag sono facilmente visionabili dal sorgente della pagina generata
+
+*/
+
+header {
+ color:#00008B;
+ text-align:center;
+}
+
+body {
+  background-image: url("GRV_neu.jpg");
+  background-attachment: fixed;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-color:white;
+  background-position: 0px 0px;
+}
+
+table {
+  align:center;
+  border-collapse:collapse;
+  background-color:#CCCCCC;
+  FILTER:alpha(opacity=80); 
+  moz-opacity:.80; 
+  opacity:.80; 
+}
+
+th {
+  font-weight: bold;
+  background-color:#FFA500;
+  color: black;
+  height:20px;
+}
+
+table, th, td {
+  border: 2px solid black;
+  padding:5px;
+  box-shadow: 10px 10px 5px #dedede;
+}
+
+/* righe di colori alternati */
+tr:nth-child(odd) 
+{ 
+background-color: #FFEC8B;
+}
+
+/* togliere per tabelle una sotto l'altra */
+#num1, #num2, #num3 {
+  float: left;
+  font-family: Verdana;
+  font-size: 0.8em;
+  margin: 5px;
+}
+
+#tabletitle {
+  text-align: center;
+  font-weight: bold; 
+  color:#8F00FF; 
+}
+
+#info {
+  color: red; 
+  font-style:italic;
+  font-weight: bold;
+}
+
+#refl {
+  font-weight: bold;
+  color: red;
+}
+
+#refl2 {
+  font-weight: bold;
+  color:violet;	
+}
+
+img {
+  margin: 2px;
+  padding: 0px;
+  height: 15px;
+  width: 15px;
+}
+
+
+.media {
+  vertical-align: middle;
+  margin: 2px;
+  padding: 0px;
+  /*border: 1px solid #000000; */
+  height: 20px;
+  width: 20px;
+}
+
+a:link {
+  text-decoration: none;
+  color:#000000;
+  font-weight: bold;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #000000;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+  color:000000;
+}
+
+#rownum {
+  color:red;
+  font-weight: bold;
+}
+
+.media2 {
+  vertical-align: middle;
+}
+
+#cnxmod {
+  color:red;
+  font-weight: bold;  
+}
+
+#contacts {
+  color:black;
+}
